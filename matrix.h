@@ -19,4 +19,7 @@ void na_1_3(double** x, int n, int m);
 
 void sum_arr(double** a, double** c, int n, int m);
 
+int sumForTest(double** x, int n, int m);
+
+int prForTest(double** x, int n, int m);
 #endif //HOMEWORK4_MATRIX_H

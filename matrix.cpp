@@ -28,12 +28,21 @@ void print(double** x, int n, int m) { // вывод матрицы
         }
     }
 }
+
 void sum(double** x, int n, int m) { // сумма элементов матрицы
     int sum = 0;
     for (int i = 0; i < n; i++)
         for (int j = 0; j < m; j++)
             sum += x[i][j];
     cout << "Summa:" << sum << endl;
+}
+
+int sumForTest(double** x, int n, int m) { // сумма для теста подпрограммы суммы
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            sum += x[i][j];
+    return sum;
 }
 
 void pr(double** x, int n, int m) { // произведение ненулевых элементов
@@ -44,6 +53,16 @@ void pr(double** x, int n, int m) { // произведение ненулевы
                 pr = pr * x[i][j];
             }
     cout << "Proizvedenie:" << pr << endl;
+}
+
+int prForTest(double** x, int n, int m) { // подпрограмма для теста pr
+    int pr = 1;
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            if (x[i][j] != 0) {
+                pr = pr * x[i][j];
+            }
+    return pr;
 }
 
 void max_el(double** x, int n, int m) { // два наибольших значения матрицы
@@ -83,7 +102,7 @@ void sum_arr(double** a, double** c, int n, int m) // сумма двух мат
     double** b = arr(n, m);
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < m; j++) {
-            b[i][j] = a[i][j] + c[i][j];
+            a[i][j] = a[i][j] + c[i][j];
             cout << setw(3) << b[i][j] << " ";
         }cout << endl;
     }cout << endl;
